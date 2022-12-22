@@ -11,8 +11,9 @@ class TicketScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = AppLayout.getSize(context);
+    //final size = AppLayout.getSize(context);
     return Scaffold(
+      backgroundColor: Styles.bgColor,
       body: Stack(
         children: [
           ListView(
@@ -42,6 +43,24 @@ class TicketScreen extends StatelessWidget {
                 child: TicketView(
                   ticket: ticketList[0],
                   isColor: true,
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        Column(
+                          children: [
+                            Text("Flutter BD", style: Styles.headLineStyle3),
+                            Gap(AppLayout.getHeight(5)),
+                            Text("Passagers", style: Styles.headLineStyle3),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ],
